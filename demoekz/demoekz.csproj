@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42E53574-F091-4625-8817-23390AFCAB7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>demoekz</RootNamespace>
+    <AssemblyName>demoekz</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin_control_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_control_panel.Designer.cs">
+      <DependentUpon>admin_control_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="client_repair_request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client_repair_request.Designer.cs">
+      <DependentUpon>client_repair_request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="client_control_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client_control_panel.Designer.cs">
+      <DependentUpon>client_control_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manager_control_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manager_control_panel.Designer.cs">
+      <DependentUpon>manager_control_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sign_up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sign_up.Designer.cs">
+      <DependentUpon>sign_up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="log_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="log_in.Designer.cs">
+      <DependentUpon>log_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="technichian_control_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="technichian_control_panel.Designer.cs">
+      <DependentUpon>technichian_control_panel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="admin_control_panel.resx">
+      <DependentUpon>admin_control_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client_control_panel.resx">
+      <DependentUpon>client_control_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client_repair_request.resx">
+      <DependentUpon>client_repair_request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manager_control_panel.resx">
+      <DependentUpon>manager_control_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sign_up.resx">
+      <DependentUpon>sign_up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="log_in.resx">
+      <DependentUpon>log_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="technichian_control_panel.resx">
+      <DependentUpon>technichian_control_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
