@@ -46,67 +46,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin_control_panel.cs">
+    <Compile Include="Forms\client_all_requests.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_control_panel.Designer.cs">
+    <Compile Include="Forms\client_all_requests.Designer.cs">
+      <DependentUpon>client_all_requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="demoekzDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>demoekzDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admin_control_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admin_control_panel.Designer.cs">
       <DependentUpon>admin_control_panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="client_repair_request.cs">
+    <Compile Include="Forms\client_managers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="client_repair_request.Designer.cs">
+    <Compile Include="Forms\client_managers.Designer.cs">
+      <DependentUpon>client_managers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\client_repair_request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\client_repair_request.Designer.cs">
       <DependentUpon>client_repair_request.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
-    <Compile Include="client_control_panel.cs">
+    <Compile Include="Forms\client_control_panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="client_control_panel.Designer.cs">
+    <Compile Include="Forms\client_control_panel.Designer.cs">
       <DependentUpon>client_control_panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="manager_control_panel.cs">
+    <Compile Include="Forms\manager_control_panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manager_control_panel.Designer.cs">
+    <Compile Include="Forms\manager_control_panel.Designer.cs">
       <DependentUpon>manager_control_panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="sign_up.cs">
+    <Compile Include="Forms\sign_up.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sign_up.Designer.cs">
+    <Compile Include="Forms\sign_up.Designer.cs">
       <DependentUpon>sign_up.cs</DependentUpon>
     </Compile>
-    <Compile Include="log_in.cs">
+    <Compile Include="Forms\log_in.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="log_in.Designer.cs">
+    <Compile Include="Forms\log_in.Designer.cs">
       <DependentUpon>log_in.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="technichian_control_panel.cs">
+    <Compile Include="Forms\technichian_control_panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="technichian_control_panel.Designer.cs">
+    <Compile Include="Forms\technichian_control_panel.Designer.cs">
       <DependentUpon>technichian_control_panel.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="admin_control_panel.resx">
+    <Compile Include="Forms\tech_all_requests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\tech_all_requests.Designer.cs">
+      <DependentUpon>tech_all_requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tech_choose_request_to_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\tech_choose_request_to_edit.Designer.cs">
+      <DependentUpon>tech_choose_request_to_edit.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\client_all_requests.resx">
+      <DependentUpon>client_all_requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admin_control_panel.resx">
       <DependentUpon>admin_control_panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="client_control_panel.resx">
+    <EmbeddedResource Include="Forms\client_control_panel.resx">
       <DependentUpon>client_control_panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="client_repair_request.resx">
+    <EmbeddedResource Include="Forms\client_managers.resx">
+      <DependentUpon>client_managers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\client_repair_request.resx">
       <DependentUpon>client_repair_request.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manager_control_panel.resx">
+    <EmbeddedResource Include="Forms\manager_control_panel.resx">
       <DependentUpon>manager_control_panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sign_up.resx">
+    <EmbeddedResource Include="Forms\sign_up.resx">
       <DependentUpon>sign_up.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="log_in.resx">
+    <EmbeddedResource Include="Forms\log_in.resx">
       <DependentUpon>log_in.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,9 +154,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="technichian_control_panel.resx">
+    <EmbeddedResource Include="Forms\technichian_control_panel.resx">
       <DependentUpon>technichian_control_panel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\tech_all_requests.resx">
+      <DependentUpon>tech_all_requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\tech_choose_request_to_edit.resx">
+      <DependentUpon>tech_choose_request_to_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="demoekzDataSet.xsc">
+      <DependentUpon>demoekzDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="demoekzDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>demoekzDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="demoekzDataSet.xss">
+      <DependentUpon>demoekzDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

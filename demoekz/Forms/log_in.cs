@@ -54,26 +54,43 @@ namespace demoekz
                 adapter2.SelectCommand = command2;
                 adapter2.Fill(table2);
 
+                CurrentUser.userLogin = textBox_login.Text;
+
+                
+
                 if (table1.Rows.Count == 1)
                 {
+                    string queryGetClient = $"select UID from Client where login = '{CurrentUser.userLogin}'";
+                    SqlCommand commandGetClient = new SqlCommand(queryGetClient, database.getConnection());
+                    database.openConnection();
+                    object resultClient = commandGetClient.ExecuteScalar();
+                    CurrentUser.userID = (int)resultClient;
+
                     MessageBox.Show("Вы успешно вошли", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     client_control_panel frm1 = new client_control_panel();
                     this.Hide();
                     frm1.ShowDialog();
-                    
+                    this.Close();
                 }
                 else if (table2.Rows.Count == 1)
                 {
                     bool containsRoleID1 = table2.AsEnumerable().Any(row => row.Field<int>("roleID") == 1);
                     bool containsRoleID2 = table2.AsEnumerable().Any(row => row.Field<int>("roleID") == 2);
                     bool containsRoleID3 = table2.AsEnumerable().Any(row => row.Field<int>("roleID") == 3);
+                    
+                    string queryGetEmployee = $"select UID from Employee where login = '{CurrentUser.userLogin}'";
+                    SqlCommand commandGetEmployee = new SqlCommand(queryGetEmployee, database.getConnection());
+                    database.openConnection();
+                    object resultEmployee = commandGetEmployee.ExecuteScalar();
+                    CurrentUser.userID = (int)resultEmployee;
+
                     if (containsRoleID1)
                     {
                         MessageBox.Show("Вы успешно вошли", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         technichian_control_panel frm1 = new technichian_control_panel();
                         this.Hide();
                         frm1.ShowDialog();
-                        
+                        this.Close();
                     }
                     else if (containsRoleID2)
                     {
@@ -81,7 +98,7 @@ namespace demoekz
                         manager_control_panel frm2 = new manager_control_panel();
                         this.Hide();
                         frm2.ShowDialog();
-                        
+                        this.Close();
                     }
                     else if (containsRoleID3)
                     {
@@ -89,11 +106,15 @@ namespace demoekz
                         admin_control_panel frm3 = new admin_control_panel();
                         this.Hide();
                         frm3.ShowDialog();
-                        
+                        this.Close();
                     }
                 }
                 else
+                {
+                    CurrentUser.userLogin = null;
+                    CurrentUser.userID = 0;
                     MessageBox.Show("Такого аккаунта не существует", "Аккаунта не существует", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -101,8 +122,8 @@ namespace demoekz
         {
             sign_up frm_sign_up = new sign_up();
             this.Hide();
-            frm_sign_up.Show();
-            
+            frm_sign_up.ShowDialog();
+            this.Close();
         }
     }
 }

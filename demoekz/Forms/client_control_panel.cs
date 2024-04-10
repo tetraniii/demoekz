@@ -21,8 +21,25 @@ namespace demoekz
         private void button_client_new_request_Click(object sender, EventArgs e)
         {
             client_repair_request frm_client_repair_request = new client_repair_request();
-            frm_client_repair_request.Show();
             Hide();
+            frm_client_repair_request.ShowDialog();
+            Close();
+        }
+
+        private void button_client_requests_Click(object sender, EventArgs e)
+        {
+            client_all_requests frm_client_all_requests = new client_all_requests();
+            Hide();
+            frm_client_all_requests.ShowDialog();
+            Close();
+        }
+
+        private void button_client_toManager_Click(object sender, EventArgs e)
+        {
+            client_managers frm_client_managers = new client_managers();
+            Hide();
+            frm_client_managers.ShowDialog();
+            Close();
         }
     }
 }

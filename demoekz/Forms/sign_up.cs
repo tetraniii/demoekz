@@ -26,11 +26,12 @@ namespace demoekz
         {
             textBox_password.MaxLength = 25;
             textBox_login.MaxLength = 50;
+            textBox_phone_number.MaxLength = 11;
         }
 
         private void button_registration_Click(object sender, EventArgs e)
         {
-            if(textBox_login.Text == "" || textBox_password.Text == "" || textBox_name.Text == "")
+            if(textBox_login.Text == "" || textBox_password.Text == "" || textBox_name.Text == "" || textBox_phone_number.Text == "")
             {
                 MessageBox.Show("Заполните все поля");
             }
@@ -39,8 +40,9 @@ namespace demoekz
                 var login = textBox_login.Text;
                 var password = textBox_password.Text;
                 var name = textBox_name.Text;
+                var phoneNum = textBox_phone_number.Text;
 
-                string querystring = $"insert into Client(login, password, name) values('{login}', '{password}', '{name}')";
+                string querystring = $"insert into Client(login, password, name, phoneNum) values('{login}', '{password}', '{name}', '{phoneNum}')";
 
                 SqlCommand command = new SqlCommand(querystring, database.getConnection());
 
@@ -97,8 +99,9 @@ namespace demoekz
         private void linkLabel_toLogin_Click(object sender, EventArgs e)
         {
             log_in frm_log_in = new log_in();
-            frm_log_in.Show();
-            Hide();
+            this.Hide();
+            frm_log_in.ShowDialog();
+            this.Close();
         }
     }
 }

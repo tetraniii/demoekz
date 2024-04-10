@@ -36,7 +36,7 @@ namespace demoekz
             this.richTextBox_problem_desc = new System.Windows.Forms.RichTextBox();
             this.button_create_request = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
-            this.listBox_equipment_type = new System.Windows.Forms.ListBox();
+            this.comboBox_equipment_type = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -112,20 +112,20 @@ namespace demoekz
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
-            // listBox_equipment_type
+            // comboBox_equipment_type
             // 
-            this.listBox_equipment_type.FormattingEnabled = true;
-            this.listBox_equipment_type.Location = new System.Drawing.Point(16, 34);
-            this.listBox_equipment_type.Name = "listBox_equipment_type";
-            this.listBox_equipment_type.Size = new System.Drawing.Size(201, 17);
-            this.listBox_equipment_type.TabIndex = 8;
+            this.comboBox_equipment_type.FormattingEnabled = true;
+            this.comboBox_equipment_type.Location = new System.Drawing.Point(16, 34);
+            this.comboBox_equipment_type.Name = "comboBox_equipment_type";
+            this.comboBox_equipment_type.Size = new System.Drawing.Size(201, 21);
+            this.comboBox_equipment_type.TabIndex = 8;
             // 
             // client_repair_request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 318);
-            this.Controls.Add(this.listBox_equipment_type);
+            this.Controls.Add(this.comboBox_equipment_type);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_create_request);
             this.Controls.Add(this.richTextBox_problem_desc);
@@ -151,6 +151,6 @@ namespace demoekz
         private System.Windows.Forms.RichTextBox richTextBox_problem_desc;
         private System.Windows.Forms.Button button_create_request;
         private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.ListBox listBox_equipment_type;
+        private System.Windows.Forms.ComboBox comboBox_equipment_type;
     }
 }

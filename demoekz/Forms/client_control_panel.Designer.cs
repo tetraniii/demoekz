@@ -58,6 +58,7 @@ namespace demoekz
             this.button_client_requests.TabIndex = 1;
             this.button_client_requests.Text = "Просмотреть заявки";
             this.button_client_requests.UseVisualStyleBackColor = true;
+            this.button_client_requests.Click += new System.EventHandler(this.button_client_requests_Click);
             // 
             // button_client_toManager
             // 
@@ -69,6 +70,7 @@ namespace demoekz
             this.button_client_toManager.TabIndex = 2;
             this.button_client_toManager.Text = "Связаться с менеджером";
             this.button_client_toManager.UseVisualStyleBackColor = true;
+            this.button_client_toManager.Click += new System.EventHandler(this.button_client_toManager_Click);
             // 
             // client_control_panel
             // 
